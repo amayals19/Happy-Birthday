@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+
+<body>
+<section id="scene1">
+
+    <div class="content">
+
+        <img src="images/bunny/bunny-wave.png" id="bunny" class="bunny" alt="Cute Bunny">
+
+        <h1 id="title">Happy Birthday</h1>
+
+        <h2 id="subtitle">My Love ❤️</h2>
+
+        <div id="questionBox" class="hidden">
+            <h2>Do you want to see your gift? 🎁</h2>
+            <div class="btn-row">
+                <button onclick="yesGift()" class="yes-btn">Yes </button>
+                <button onclick="noClicked()" class="yes-btn" style="background:#aaa;">No</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Scene 2 -->
+<!-- ================= Scene 2 ================= -->
+
+<section id="scene2" class="scene hidden">
+
+    <div class="content">
+
+        <h1 class="giftTitle">
+            I have three little surprises for you ❤️
+        </h1>
+
+        <p class="giftText">
+            Choose any gift to begin...
+        </p>
+
+        <div class="giftRow">
+
+            <!-- Gift 1 -->
+            <div class="giftItem">
+
+                <img
+                    src="images/gift/gift-closed.png"
+                    id="gift1"
+                    class="giftBox"
+                    alt="Gift 1">
+
+
+            </div>
+
+            <!-- Gift 2 -->
+            <div class="giftItem">
+
+                <img
+                    src="images/gift/gift-closed.png"
+                    id="gift2"
+                    class="giftBox"
+                    alt="Gift 2">
+
+
+            </div>
+
+            <!-- Gift 3 -->
+            <div class="giftItem">
+
+                <img
+                    src="images/gift/gift-closed.png"
+                    id="gift3"
+                    class="giftBox"
+                    alt="Gift 3">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= Scene 3 ================= -->
+
+<section id="scene3" class="scene hidden">
+
+    <div class="content">
+
+        <img
+            src="images/bouquet.png"
+            class="bouquetImage"
+            alt="Bouquet">
+
+        <h1 class="giftTitle">
+            These flowers are for you 
+        </h1>
+
+        <p class="giftText">
+            I wish I could hand these to you in person,
+            but until then...
+            these are filled with all my love ❤️
+        </p>
+
+        <button id="giftContinue" class="continue-btn">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= Scene 4 ================= -->
+
+
+<section id="scene4" class="scene hidden">
+
+    <div class="content">
+
+        <h1 class="giftTitle">
+            A Letter Just For You 
+        </h1>
+
+        <p class="giftText">
+            Touch the heart seal ❤️
+        </p>
+
+        <div class="envelopeContainer">
+
+            <img
+                src="images/letter-envelope.png"
+                id="letterEnvelope"
+                class="letterEnvelope"
+                alt="Envelope">
+            <img
+                src="images/letter.png"
+                id="letterPaper"
+                class="letterPaper"
+                alt="Letter">
+
+            <div id="seal"></div>
+            <div id="letterMessage" class="letterMessage">
+                <h2>Happy Birthday Mone ❤️</h2>
+                <p id="typedLetter"></p>
+            </div>
+            
+        
+        </div>
+        <button id="letterContinue" class="continue-btn hidden">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= Scene 5 ================= -->
+
+<section id="scene5" class="scene hidden">
+
+    <div class="content">
+
+        <h1 class="giftTitle">
+            One More Surprise 🎂
+        </h1>
+
+        <p class="giftText">
+            Make a wish before cutting the cake ✨
+        </p>
+
+        <img
+            src="images/cake.png"
+            id="birthdayCake"
+            class="cakeImage"
+            alt="Birthday Cake">
+
+        <button id="cakeContinue" class="continue-btn hidden">
+            Continue ❤️
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= Scene 6 ================= -->
+
+<section id="scene6" class="scene hidden">
+
+    <div class="content">
+
+        <h1 class="giftTitle">
+            Song For You 
+        </h1>
+
+        <p class="giftText">
+            Every time I hear this song,
+            it reminds me of you ❤️
+        </p>
+
+        <img
+            src="images/spotify.png"
+            class="spotifyImage"
+            alt="Spotify">
+
+        <a
+            href="https://open.spotify.com/track/1KG7KGuoWS8PP2O2KMsdLT?si=0a5932ebcacf4536"
+            target="_blank">
+
+            <button class="continue-btn">
+                Play Song 🎶
+            </button>
+
+        </a>
+
+        <button
+            id="finalContinue"
+            class="continue-btn"
+            style="margin-top:20px;">
+
+            Final Surprise ❤️
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= Scene 7 ================= -->
+
+<section id="scene7" class="scene hidden">
+
+    <div class="content">
+
+        <img
+            src="images/bunny/bunny-love.png"
+            class="bunny"
+            alt="Happy Bunny">
+
+        <h1 class="giftTitle">
+            Happy Birthday, My Love 
+        </h1>
+
+        <p id="finalMessage" class="finalMessage"></p>
+
+
+
+    </div>
+
+</section>
+<audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
